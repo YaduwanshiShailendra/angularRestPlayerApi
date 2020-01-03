@@ -1,0 +1,78 @@
+<!--<ul class="list-group" *ngFor="let emp of employee">
+  <li class="list-group-item mt-2">EmpId :{{ employee.emp_id }}</li>
+  <li class="list-group-item mt-2"><img src="{{ employee.emp_pic }}" /></li>
+  <li class="list-group-item mt-2">EmpName:{{ employee.emp_name }}</li>
+  <li class="list-group-item mt-2">
+    Empdesignation:{{ employee.emp_designation }}
+  </li>
+  <li class="list-group-item mt-2">Emp Salary:{{ employee.emp_salary }}</li>
+  <li class="list-group-item mt-2">Emp Location:{{ employee.emp_location }}</li>
+  <li class="list-group-item mt-2">
+    Emp Education:{{ employee.emp_education }}
+  </li>
+  <li class="list-group-item mt-2">Emp Doj:{{ employee.emp_doj }}</li>
+</ul>--
+<img [src]="ImageUrl" />--
+<button class="btn btn-danger mt-2" [class.active]="isActive">submit</button>-
+
+<table>
+  <tr>
+    <td [attr.colspan]="colSpan">colSpan here</td>
+    <td>colSpan here</td>
+  </tr>
+</table>
+<div [style.backgroundColor]="isActive ? 'red' : 'green'">
+  Lorem ipsum dolor sit amet consectetur.
+</div>
+<button (click)="click($event)">submit</button>-->
+
+<!--<input
+  type="text"
+  name=""
+  id=""
+  class="form-control mt-2"
+  placeholder="enter a key"
+  (keyup.enter)="username($event)"
+/>
+<input type="text" #email (keyup.enter)="enterEmail(email.value)" />
+<input
+  type="text"
+  #username
+  class="form-control"
+  (keyup.enter)="getUsername(username.value)"
+  placeholder="enter username"
+/>-->
+
+<!--2 way data binding-->
+<input
+  type="text"
+  class="form-control mt-2"
+  placeholder="enter name"
+  [(ngModel)]="username"
+/>
+<input
+  type="text"
+  class="form-control mt-2"
+  placeholder="enter email"
+  [(ngModel)]="email"
+/>
+<input
+  type="text"
+  class="form-control mt-2"
+  placeholder="enter phone no."
+  [(ngModel)]="phonenumber"
+/>
+<textarea
+  name=""
+  id=""
+  cols="30"
+  rows="10"
+  class="form-control"
+  [(ngModel)]="description"
+></textarea>
+<h1>{{ username }}</h1>
+<h1>{{ email }}</h1>
+<h1>{{ phonenumber }}</h1>
+<p>{{ description }}</p>
+<!--ngModel only works with form element-->
+<!--to use ngModel directive should import FormsModulein app.module.ts-->

@@ -1,0 +1,97 @@
+<div *ngIf="users.length > 0; then usersList; else noUsersList"></div>
+
+<ng-template #usersList>
+  <ul class="list-group">
+    <li
+      sony
+      class="list-group-item "
+      *ngFor="
+        let user of users;
+        index as i;
+        even as isEven;
+        odd as isOdd;
+        first as isFirst;
+        last as isLast
+      "
+    >
+      <span class="badge badge-dark p-2 mr-2"> {{ i + 1 }} </span>
+      {{ user }}
+      <span class="badge badge-success float-right" *ngIf="isEven">even</span>
+      <span class="badge badge-danger float-right" *ngIf="isOdd">odd</span>
+    </li>
+  </ul>
+</ng-template>
+
+<ng-template #noUsersList>
+  <h1 class="text-danger">
+    No user here
+  </h1>
+</ng-template>
+
+<button class="btn btn-dark-sm" (click)="removeUser(user)">
+  Remove
+</button>
+<div [hidden]="users.length == 0">users are here</div>
+<div [hidden]="users.length == 0">hello hidden here</div>
+
+// color iter
+<!-- 
+
+<div>
+
+    <span [ngSwitch]="color">
+        <p *ngSwitchCase="'red'">
+            <span class="text-danger">red color here</span>
+        </p>
+        <p *ngSwitchCase="'red'">
+            <span class="text-danger">red color here</span>
+        </p>
+        </span>
+
+</div>
+ -->
+
+<button [ngClass]="'btn btn-dark'">Btn Dark</button>
+<!-- string way  -->
+<button [ngClass]="['btn', 'btn-success']">Submit</button>
+<!-- array way -->
+<button [ngClass]="{ btn: true, 'btn-danger': true }">Btn Danger class</button>
+<!-- object way -->
+<br />
+
+<button [ngClass]="['btn', 'btn-danger', 'mt-2']" (click)="toggleState()">
+  Add dynamic classs to div
+</button>
+<br />
+<div sony class="container">
+  <div [ngClass]="addDynamicClass()">
+    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Assumenda,
+    repudiandae iusto, quod quam sint fuga illo, sapiente rem unde aliquid
+    quisquam cupiditate ad provident nisi ratione aut? Ad alias voluptatum
+    labore, inventore veritatis deserunt quod maiores assumenda exercitationem
+    optio. Delectus vel at reprehenderit pariatur hic magni eveniet odit
+    voluptates consectetur odio quia et sapiente nihil ab non libero, blanditiis
+    minima perspiciatis cupiditate minus qui voluptatem. Quo id cumque sed
+    accusantium omnis, beatae nobis impedit nulla iste et possimus cupiditate,
+    sit dolore quaerat, commodi excepturi quae nihil aliquam dolorum odit.
+    Laborum illo vitae itaque? Est neque dolor eveniet nesciunt a consequuntur.
+  </div>
+</div>
+
+<div class="container">
+  <ul class="list-group">
+    <li
+      sony
+      class="list-group-item mt-2"
+      *ngFor="let user1 of users1"
+      [ngStyle]="{
+        background: user1.gender === 'male' ? 'powderblue' : 'lightgreen'
+      }"
+    >
+      {{ user1.name }}
+      {{ user1.age }}
+      {{ user1.gender }}
+      {{ user1.country }}
+    </li>
+  </ul>
+</div>

@@ -1,0 +1,72 @@
+<!-- <ul class="list-group" *ngFor="let user of users">
+  <li class="list-group-item mt-2">UserId :{{ users.user_id }}</li>
+  <li class="list-group-item mt-2"><img src="{{ users.user_pic }}" /></li>
+  <li class="list-group-item mt-2">UserName:{{ users.user_name }}</li>
+  <li class="list-group-item mt-2">UserDateOfBirth:{{ users.emp_dob }}</li>
+  <li class="list-group-item mt-2">
+    Userdesignation:{{ users.user_designation }}
+  </li>
+  <li class="list-group-item mt-2">User Salary:{{ users.user_salary }}</li>
+  <li class="list-group-item mt-2">User Location:{{ users.user_location }}</li>
+  <li class="list-group-item mt-2">
+    User Education:{{ users.user_education }}
+  </li>
+  <li class="list-group-item mt-2">UserDoj:{{ users.user_doj }}</li>
+  <li class="list-group-item mt-2">UserCompany:{{ users.user_company }}</li>
+</ul> -->
+
+<!--<p>users works!</p>
+<ul class="list-group" *ngFor="let user of users">
+  <li class="list-group-item mt-2">name: {{ user.name }}</li>
+  <li class="list-group-item mt-2"><img src="{{ user.photo }}" alt="" /></li>
+  <li class="list-group-item mt-2">id: {{ user.id }}</li>
+  <li class="list-group-item mt-2">designation: {{ user.designation }}</li>
+  <li class="list-group-item mt-2">doj: {{ user.doj }}</li>
+  <li class="list-group-item mt-2">education: {{ user.education }}</li>
+  <li class="list-group-item mt-2">date_of_birth: {{user.date_of_birth</li>
+  <li class="list-group-item mt-2">company name: {{ user.company_name }}</li>
+  <li class="list-group-item mt-2">salary: {{ user.salary }}</li>
+  <li class="list-group-item mt-2">location: {{ user.location }}</li>
+</ul>-->
+<button class="btn btn-primary mt-2 mb-2" (click)="addNewuser()">
+  Add new User
+</button>
+
+<table class="table table-bordered table-hover table-dark">
+  <tr>
+    <th>Id</th>
+    <th>Name</th>
+    <th>Photo</th>
+    <th>Age</th>
+    <th>Gender</th>
+    <th>Designation</th>
+    <th>Location</th>
+    <th>Salary</th>
+    <th>Company</th>
+    <th>Education</th>
+  </tr>
+  <tr *ngFor="let user of users; index as i">
+    <td>{{ i + 1 }}</td>
+    <td>{{ user.name }}</td>
+    <td>
+      <img
+        class="img-fluid rounded-circle"
+        style="width:100px;height:100px;"
+        src="{{ user.photo }}"
+        alt="{{ user.name }}"
+      />
+    </td>
+    <td>{{ user.age }}</td>
+    <td>{{ user.gender }}</td>
+    <td>{{ user.designation }}</td>
+    <td>{{ user.location }}</td>
+    <td>{{ user.salary }}</td>
+    <td>{{ user.company }}</td>
+    <td>{{ user.education }}</td>
+    <td>
+      <button class="btn btn-danger mt-2 md-2" (click)="Remove(user)">
+        Remove
+      </button>
+    </td>
+  </tr>
+</table>

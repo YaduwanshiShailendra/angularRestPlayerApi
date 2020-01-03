@@ -1,0 +1,46 @@
+<!--<app-header></app-header>-->
+<!-- <app-reactiveform></app-reactiveform> -->
+<!-- <app-form-builder></app-form-builder> -->
+<div class="container">
+  <marquee behavior="" direction="">
+    <h1>Shailendra Yaduwanshi</h1>
+  </marquee>
+  <br /><br />
+
+  <!-- <app-students></app-students> -->
+  <!--<app-login></app-login>-->
+  <!--<app-employee></app-employee>-->
+  <!--<app-users></app-users>-->
+  <!--<app-simple></app-simple>-->
+  <!--<app-login1></app-login1>-->
+  <!-- <app-contact></!-->
+
+  <router-outlet></router-outlet>
+  <!--This is built in directive and it is using glue between html page(root page) and router module configuration-->
+  <app-header></app-header>
+
+  <br />
+  <br />
+  <div class="row">
+    <div class="col-md-6">
+      <app-login2
+        ><h1>Login</h1>
+        <button id="btn">login</button>
+        <div>
+          <span>Don't have an account Please</span>
+          <a href="/register">Register</a>
+        </div>
+      </app-login2>
+    </div>
+    <div class="col-md-6">
+      <app-login2
+        ><h1>Register</h1>
+        <button id="btn">Register</button>
+        <div>
+          <span>Already registered please</span>
+          <a href="/login">login</a>
+        </div>
+      </app-login2>
+    </div>
+  </div>
+</div>

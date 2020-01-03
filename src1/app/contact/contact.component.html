@@ -1,0 +1,92 @@
+<!-- div.container>div.col-md-6.offset-3.card>div.card-body>h1.display-12.text-center.text-uppercase{login}+form>div.form-gropu>(label[for="firstname"]{firstname}+input.form-control[type="text" name="firstname" id="firstname" placeholder="Enter firstname"])*6+div.form-group>label{Country}+(select>option{india}*5)+div.form-group>button.btn.btn-success.btn-block{Registered} -->
+
+<br /><br /><br /><br /><br />
+
+<div class="container">
+  <div class="col-md-6 offset-3 card">
+    <div class="card-body">
+      <h1 class="display-12 text-center text-uppercase">login</h1>
+      <form action="">
+        <div class="form-gropu">
+          <label for="firstname">First Name</label>
+          <input
+            ngModel
+            type="text"
+            class="form-control"
+            name="firstname"
+            id="firstname"
+            placeholder="Enter firstname"
+          />
+        </div>
+        <div class="form-group">
+          <label for="lastname">Last Name</label>
+          <input
+            ngModel
+            type="text"
+            class="form-control"
+            name="lastname"
+            id="lastname"
+            placeholder="Enter lastname"
+          />
+        </div>
+        <div class="form-group">
+          <label for="phoneno">Phone No.</label>
+          <input
+            ngModel
+            type="tel"
+            class="form-control"
+            name="phoneno"
+            id="phoneno"
+            placeholder="Enter phoneno"
+            required
+            minlength="10"
+            maxlength="10"
+          />
+        </div>
+        <div class="form-group">
+          <label for="email">Email_id</label>
+          <input
+            ngModel
+            type="email"
+            class="form-control"
+            name="email"
+            id="email"
+            placeholder="Enter email"
+          />
+        </div>
+        <div class="form-group">
+          <label *ngFor="let gender of genderList"
+            ><input
+              type="radio"
+              ngModel
+              name="gender"
+              name="{{ gender.name }}"
+              value="{{ gender.name }}"
+            />{{ gender.name }}</label
+          >
+        </div>
+        <div class="form-group">
+          <label *ngFor="let checkbox of checkBox"
+            ><input type="checkbox" ngModel name="checkbox" />{{
+              checkbox
+            }}</label
+          >
+
+          <div class="form-group">
+            <label for="">Country</label>
+            <select name="country" id="country" class="form-control">
+              <option
+                *ngFor="let country of countryList; index as i"
+                [ngValue]="i"
+                >{{ country }}</option
+              >
+            </select>
+          </div>
+          <div class="form-group">
+            <button class="btn btn-success btn-block">Registered</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

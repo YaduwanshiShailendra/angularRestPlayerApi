@@ -1,0 +1,53 @@
+<!-- div.container>div.col-md-4.offset-4.card.mt-4>h1.text-center.text-uppercase.mt-2.text-danger.display-6{Reactive formregister}+form>div.form-group>(div.form-group>input.form-control.mt-2[type="text" placeholder="username"])*2+button.btn.btn-success.btn-block.mt-2{Register} -->
+
+<div class="container">
+  <marquee behavior="" direction="">
+    <h1>Shailendra Yaduwanshi</h1>
+  </marquee>
+  <div class="col-md-4 offset-4 card mt-4">
+    <h1 class="text-center text-uppercase mt-2 text-danger display-6">
+      Reactive form register
+    </h1>
+    <form [formGroup]="form">
+      <div class="form-group">
+        <div class="form-group">
+          <input
+            formControlName="username"
+            type="text"
+            class="form-control mt-2"
+            placeholder="username"
+          />
+
+          <!-- this is for validation -->
+          <div
+            class="text-danger mt-2"
+            *ngIf="form.get('username').touched && form.get('username').invalid"
+          >
+            <p *ngIf="username.errors.required">
+              Username is required
+            </p>
+            <p *ngIf="username.errors.minlength">
+              Username should be minimum 3 characters
+            </p>
+            <p *ngIf="username.errors.pattern">
+              Username is not matching
+            </p>
+            <p *ngIf="username.errors.removespace">
+              Username connot contain space
+            </p>
+          </div>
+          <!-- end of validation block -->
+        </div>
+        <div class="form-group">
+          <input
+            formControlName="password"
+            type="password"
+            class="form-control mt-2"
+            placeholder="password"
+          />
+        </div>
+        <button class="btn btn-success btn-block mt-2">Register</button>
+      </div>
+    </form>
+  </div>
+</div>

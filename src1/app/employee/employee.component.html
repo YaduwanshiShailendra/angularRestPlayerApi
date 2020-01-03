@@ -1,0 +1,75 @@
+<!-- <p>employee works!</p> -->
+<!-- zen coding -->
+<!-- ul.list-group>li.list-group-item.mt-2*8 -->
+
+<!-- <ul class="list-group " *ngFor="let emp of employee">
+  <li class="list-group-item mt-2">EmpId: {{ employee.emp_id }}</li>
+  <li class="list-group-item mt-2">
+    <img src="{{ employee.emp_photo }}" alt="" />
+  </li>
+  <li class="list-group-item mt-2">EmpId: {{ employee.emp_name }}</li>
+  <li class="list-group-item mt-2">
+    EmpDesignation: {{ employee.emp_designation }}
+  </li>
+  <li class="list-group-item mt-2">EmpSalary: {{ employee.emp_salary }}</li>
+  <li class="list-group-item mt-2">EmpLocation: {{ employee.emp_location }}</li>
+  <li class="list-group-item mt-2">
+    EmpEducation: {{ employee.emp_education }}
+  </li>
+  <li class="list-group-item mt-2">EmpDOJ: {{ employee.emp_doj }}</li>
+</ul> -->
+
+<!-- <img [src]="ImageUrl" /> -->
+<!-- {{ isActive }}
+<button class="btn btn-danger mt-2" [class.active]="isActive">Submit</button> -->
+<!-- 
+<table>
+  <tr>
+    <td [attr.colspan]="colSpan">colspan here</td>
+    <td [attr.colspan]="colSpan">colspan here</td>
+  </tr>
+</table> -->
+
+<!-- <div [style.backgroundColor]="isActive ? 'red' : 'green'">
+  Lorem ipsum dolor sit amet consectetur, adipisicing elit. Velit, unde?
+</div> -->
+
+<div>
+  <!--two way data binding-- directive name is ngModel--->
+  <input
+    type="text"
+    class="form-control mt-2"
+    placeholder="enter name"
+    [(ngModel)]="username"
+  />
+
+  <input
+    type="text"
+    class="form-control mt-2"
+    placeholder="enter email"
+    [(ngModel)]="email"
+  />
+
+  <input
+    type="text"
+    class="form-control mt-2"
+    placeholder="enter phone no"
+    [(ngModel)]="phonenumber"
+  />
+
+  <textarea
+    name=""
+    id=""
+    cols="30"
+    rows="10"
+    class="form-control"
+    [(ngModel)]="description"
+  >
+  </textarea>
+  <h1>{{ username }}</h1>
+  <h1>{{ email }}</h1>
+  <h1>{{ phonenumber }}</h1>
+  <p>{{ description }}</p>
+  <!-- ngModel only works with forms elements -->
+  <!-- to use ngModel directive should import FormsModule in app.module.ts -->
+</div>

@@ -1,0 +1,100 @@
+<!-- <header class="site-header">
+  <div class="container">
+    <h1>Sony Raj</h1>
+    <nav role="navigation" class="site-navigation">
+      <ul>
+        <li><a href="#">Link</a></li>
+        <li><a href="#">Link</a></li>
+        <li><a href="#">Link</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<section role="main" class="container">
+  <img src="http://placehold.it/1400x400/ff694d/f6f2eb" class="banner-image" />
+  <div class="grid-row col-3">
+    <div class="grid-unit">
+      <img src="http://placehold.it/650x300/ff694d/f6f2eb" />
+      <p>
+        Nullam quis risus eget urna mollis ornare vel eu leo. Donec id elit non
+        mi porta gravida at eget metus. Curabitur blandit tempus porttitor.
+      </p>
+    </div>
+
+    <div class="grid-unit">
+      <img src="http://placehold.it/650x300/ff694d/f6f2eb" />
+      <p>
+        Nullam quis risus eget urna mollis ornare vel eu leo. Donec id elit non
+        mi porta gravida at eget metus. Curabitur blandit tempus porttitor.
+      </p>
+    </div>
+
+    <div class="grid-unit">
+      <img src="http://placehold.it/650x300/ff694d/f6f2eb" />
+      <p>
+        Nullam quis risus eget urna mollis ornare vel eu leo. Donec id elit non
+        mi porta gravida at eget metus. Curabitur blandit tempus porttitor.
+      </p>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer" role="contentinfo">
+  <div class="container">
+    <p>
+      This basic site is meant to accompany
+      <a href="http://trentwalton.com/2013/01/07/flexible-foundations/"
+        >this blog post</a
+      >.
+    </p>
+  </div>
+</footer> -->
+
+<!-- ############################################################ -->
+
+<h1>angular componet here</h1>
+<ul class="list-group">
+  <li class="list-group-item" *ngFor="let x of languges">{{ x }}</li>
+</ul>
+<button class="btn-primary mt-2 mb-2" (click)="addNewuser()">
+  Add new User
+</button>
+<table class="table table-bordered table-hover table-dark mt-2">
+  <tr>
+    <th>Name</th>
+    <th>Photo</th>
+    <th>Age</th>
+    <th>Company</th>
+    <th>Salary</th>
+    <th>Designation</th>
+    <th>Location</th>
+    <th>Gender</th>
+    <th>Education</th>
+    <th>Delete user</th>
+  </tr>
+  <tr *ngFor="let user of users; index as i" class="table-light text-dark">
+    <td>{{ i + 1 }}</td>
+    <td>{{ user.name }}</td>
+    <td>
+      <img
+        class="img-fluid rounded-circle"
+        src="{{ user.photo }}"
+        alt="{{ user.name }}"
+        style="width:100px; height:100px"
+      />
+    </td>
+    <td>{{ user.age }}</td>
+    <td>{{ user.company_name }}</td>
+    <td>{{ user.salary }}</td>
+    <td>{{ user.salary }}</td>
+    <td>{{ user.designation }}</td>
+    <td>{{ user.location }}</td>
+    <td>{{ user.gender }}</td>
+    <td>
+      <button class="btn btn-danger btn-sm" (click)="removeUser(user)">
+        Remove
+      </button>
+    </td>
+  </tr>
+</table>
